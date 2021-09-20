@@ -18,7 +18,11 @@ import (
 var MONGO_URL = "mongodb://bd-proyecto1:L2XNwzBGxhRGLChvwUfUdhG18ZfccuKQDoIdRZyPFWGgpSsDNvn9QsLu3wK3PQ9geyPRGSg1fywKZUuh2JO3YA==@bd-proyecto1.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@bd-proyecto1@"
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
-    w.Write([]byte("API GO - CLASE 7!\n"))
+    w.Write([]byte("API GO - CLOUD RUN ACTUALIZADO LBTESTER !\n"))
+}
+
+func hola(w http.ResponseWriter, r *http.Request) {
+    w.Write([]byte("Mensaje del endpoint /hola!\n"))
 }
 
 func timestamp_info(w http.ResponseWriter, r *http.Request){
@@ -115,9 +119,10 @@ func obtenerTodo(w http.ResponseWriter, r *http.Request) {
 func main() {
 	router := mux.NewRouter().StrictSlash(false)
 	router.HandleFunc("/", IndexHandler)
+	router.HandleFunc("/hola", hola)
 	router.HandleFunc("/timestampinfo",timestamp_info).Methods("GET")
 	router.HandleFunc("/obtenerTodo",obtenerTodo).Methods("GET")
-	router.HandleFunc("/save",save).Methods("POST")
+	router.HandleFunc("/Save",save).Methods("POST")
     log.Println("Listening at port 2000") 
 	log.Fatal(http.ListenAndServe(":2000", router))
 }
