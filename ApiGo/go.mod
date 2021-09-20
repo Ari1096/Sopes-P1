@@ -1,4 +1,4 @@
-module racarlosdavid/goapi
+module Ari1096/goapi
 
 go 1.13
 
