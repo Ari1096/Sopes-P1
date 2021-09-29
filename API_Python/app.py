@@ -4,8 +4,8 @@
 # Se llama al Framework y se inicializa
 from flask import Flask, request, render_template
 
-# Módulo para mysql - pip install mysqlclient
-import MySQLdb 
+# Módulo para mysql
+import MySQLdb
 
 # --------------------------------------------- FUNCIONES ---------------------------------------------
 # Conexión con MySQL
